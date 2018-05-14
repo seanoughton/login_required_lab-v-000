@@ -15,4 +15,14 @@ class ApplicationController < ActionController::Base
     #name = session[:name] || name = nil
     session[:name] ||= nil
   end
+
+  def hello
+    redirect_to controller: 'sessions', action: 'new' unless session[:name]
+  end
+
+  private
+
+  def require_logged_in
+    redirect_to controller: 'sessions', action: 'new' unless current_user
+  end
 end
