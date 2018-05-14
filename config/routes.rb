@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get 'secrets/new'
+  get 'secrets/show'
 
   get 'sessions/new'
 

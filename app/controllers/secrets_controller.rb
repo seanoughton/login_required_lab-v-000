@@ -3,6 +3,8 @@ class SecretsController < ApplicationController
   end
 
   def show
-    byebug
+    if current_user == nil
+      redirect_to controller: 'sessions', action: 'new'
+    end
   end
 end
