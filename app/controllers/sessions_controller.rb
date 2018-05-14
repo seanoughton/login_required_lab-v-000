@@ -9,4 +9,12 @@ class SessionsController < ApplicationController
       session[:name] = params[:name]
     end
   end
+
+  def destroy
+    if session[:name] == nil
+      session[:name]
+    else
+      session.delete :name
+    end
+  end
 end
