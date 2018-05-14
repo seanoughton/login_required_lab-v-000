@@ -5,10 +5,14 @@ class ApplicationController < ActionController::Base
 
   def current_user
     #return head(:forbidden) unless session.include? :name
+=begin
     name = nil
     if session.include? :name
       name = session[:name]
     end
     name
+=end
+    #name = session[:name] || name = nil
+    session[:name] ||= nil
   end
 end
