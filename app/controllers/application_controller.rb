@@ -4,6 +4,11 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   def current_user
-    return head(:forbidden) unless session.include? :name
+    #return head(:forbidden) unless session.include? :name
+    name = nil
+    if session.include? :name
+      name = session[:name]
+    end
+    name
   end
 end
